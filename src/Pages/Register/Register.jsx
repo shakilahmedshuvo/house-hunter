@@ -156,10 +156,8 @@ const Register = () => {
                         className="flex justify-center">
                         <input
                             type="submit"
-                            value='SUBMIT'
-                            name='ingredients'
+                            value='Register'
                             className="w-full py-4 px-3 font-semibold border-2 bg-[#4070F4] text-white rounded-lg  mt-3 cursor-pointer"
-                            placeholder="Recipe Ingredients"
                             required />
                     </div>
 

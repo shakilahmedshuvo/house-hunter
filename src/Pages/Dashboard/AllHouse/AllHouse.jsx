@@ -1,7 +1,7 @@
 const AllHouse = () => {
-    return (
+return (
         <div>
-            thios os
+
         </div>
     );
 };
