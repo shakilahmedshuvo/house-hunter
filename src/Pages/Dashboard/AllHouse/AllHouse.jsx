@@ -2,18 +2,53 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { TbEdit } from "react-icons/tb";
+import Swal from "sweetalert2";
 
 const AllHouse = () => {
-    const [data, setData] = useState([]);
+    const [house, setHouse] = useState([]);
 
     useEffect(() => {
         fetch("http://localhost:5000/allHouse")
             .then(res => res.json())
             .then(data => {
-                setData(data);
+                setHouse(data);
                 // console.log(data);
             })
     }, []);
+
+
+    // delete function
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: 'Are you sure delete this house?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    fetch(`http://localhost:5000/allHouse/${id}`, {
+                        method: 'DELETE',
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            // console.log(data);
+                            if (data.deletedCount > 0) {
+                                Swal.fire(
+                                    'Deleted!',
+                                    'Your file has been deleted.',
+                                    'success'
+                                )
+                                const remaining = house?.filter(data => data._id !== id);
+                                setHouse(remaining);
+                            }
+                        })
+                }
+            })
+    };
 
     return (
         <div className="overflow-x-auto w-full">
@@ -43,7 +78,7 @@ const AllHouse = () => {
                 {/* table body start */}
                 <tbody>
                     {
-                        data?.map((item, index) => (
+                        house?.map((item, index) => (
                             <tr
                                 key={item._id}>
 
@@ -86,7 +121,7 @@ const AllHouse = () => {
                                 </Link>
 
                                 <td
-                                    // onClick={() => handleDelete(item._id)}
+                                    onClick={() => handleDelete(item._id)}
                                     className="rounded-md font-semibold cursor-pointer w-fit text-white">
                                     <p className="w-fit bg-[#E91E63] p-2 rounded-lg">
                                         <RiDeleteBinLine className="text-2xl" />
