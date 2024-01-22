@@ -1,10 +1,21 @@
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const Register = () => {
     // get the data 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (data) => {
+        console.log(data);
+        Swal.fire({
+            position: "top-center",
+            icon: "Your Resister has been successful",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+        });
+        reset();
+    }
 
     return (
         <div className="bg-[#4070F4]">
