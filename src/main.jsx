@@ -12,6 +12,7 @@ import Login from './Pages/HomePage/Login/Login.jsx';
 import Dashboard from './Layout/dashboard.jsx';
 import AddNewHouse from './Pages/Dashboard/AddNewHouse/AddNewHouse.jsx';
 import AllHouse from './Pages/Dashboard/AllHouse/AllHouse.jsx';
+import UpdateHouse from './Pages/Dashboard/UpdateHouse/UpdateHouse.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,12 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />
-      }
+      },
+      {
+        path: 'update/:id',
+        element: <UpdateHouse />,
+        loader: ({ params }) => fetch(`http://localhost:5000/allHouse/${params.id}`)
+      },
     ]
   },
   {
@@ -39,7 +45,7 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/allHouse",
         element: <AllHouse />
-      },
+      }
     ]
   }
 ]);

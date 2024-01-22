@@ -111,7 +111,7 @@ const AllHouse = () => {
                                 </td>
 
                                 <Link
-                                    to={`/updateHouse/${item._id}`}>
+                                    to={`/update/${item._id}`}>
                                     <td
                                         className="font-semibold cursor-pointer">
                                         <p className="w-fit p-2 bg-[#00A6ED] text-white rounded-md">
