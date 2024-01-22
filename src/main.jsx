@@ -9,6 +9,9 @@ import {
 import Main from './Layout/Main.jsx';
 import Register from './Pages/Register/Register.jsx';
 import Login from './Pages/HomePage/Login/Login.jsx';
+import Dashboard from './Layout/dashboard.jsx';
+import AddNewHouse from './Pages/Dashboard/AddNewHouse/AddNewHouse.jsx';
+import AllHouse from './Pages/Dashboard/AllHouse/AllHouse.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +28,20 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+    children: [
+      {
+        path: "/dashboard/addNewHouse",
+        element: <AddNewHouse />
+      },
+      {
+        path: "/dashboard/allHouse",
+        element: <AllHouse />
+      },
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

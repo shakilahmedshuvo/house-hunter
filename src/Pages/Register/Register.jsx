@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { Link, Navigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Register = () => {
@@ -40,7 +41,7 @@ const Register = () => {
                         timer: 1500
                     });
                     reset();
-                    // navigate('/')
+                    Navigate('/dashboard')
                 }
             })
         console.log(data);
@@ -48,7 +49,7 @@ const Register = () => {
 
     return (
         <div className="bg-gradient-to-r from-blue-200 to-blue-100 backdrop-blur-3xl">
-            <div className="container mx-auto py-14">
+            <div className="container mx-auto py-10">
 
                 <form
                     onSubmit={handleSubmit(onSubmit)}
@@ -160,6 +161,12 @@ const Register = () => {
                             className="w-full py-4 px-3 font-semibold border-2 bg-[#4070F4] text-white rounded-lg  mt-3 cursor-pointer"
                             placeholder="Recipe Ingredients"
                             required />
+                    </div>
+
+                    <br />
+
+                    <div className="font-medium text-gray-500">
+                        If you have any account please <Link to={"/login"} className="hover:underline text-blue-500 duration-300">Login</Link>
                     </div>
 
                 </form>

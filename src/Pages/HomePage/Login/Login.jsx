@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     // get the data 
@@ -67,6 +68,12 @@ const Login = () => {
                             className="w-full py-4 px-3 font-semibold border-2 bg-[#4070F4] text-white rounded-lg  mt-3 cursor-pointer"
                             placeholder="Recipe Ingredients"
                             required />
+                    </div>
+
+                    <br />
+
+                    <div className="font-medium text-gray-500">
+                        If you dont have any account please <Link to={"/"} className="hover:underline text-blue-500">Register</Link>
                     </div>
 
                 </form>
