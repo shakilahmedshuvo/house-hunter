@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const AddNewHouse = () => {
   // get the data 
@@ -31,6 +32,28 @@ const AddNewHouse = () => {
       phone,
       description
     };
+
+    // post data in mongodb
+    fetch('http://localhost:5000/allHouse', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(allData)
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.insertedId) {
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Your Resister has been successful",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          reset();
+        }
+      })
     console.log(data);
   };
 

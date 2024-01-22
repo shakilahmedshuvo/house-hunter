@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Register = () => {
@@ -41,7 +41,7 @@ const Register = () => {
                         timer: 1500
                     });
                     reset();
-                    Navigate('/dashboard')
+                    // Navigate('/dashboard')
                 }
             })
         console.log(data);
