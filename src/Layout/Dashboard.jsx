@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaPlusMinus } from "react-icons/fa6";
+import { FaHouseFlag } from "react-icons/fa6";
+import { BsHouses } from "react-icons/bs";
 
 const Dashboard = () => {
     return (
@@ -34,16 +35,16 @@ const Dashboard = () => {
                     <li>
                         <NavLink
                             to='/dashboard/addNewHouse'
-                            className="flex items-center m-2 py-1">
-                            <FaPlusMinus className="mr-2" /> Add New House
+                            className="flex items-center m-2 py-1 text-base">
+                            <FaHouseFlag className="mr-2" /> Add New House
                         </NavLink>
                     </li>
-                   
+
                     <li>
                         <NavLink
                             to='/dashboard/allHouse'
-                            className="flex items-center m-2 py-1">
-                            <FaPlusMinus className="mr-2" /> All House & Owners
+                            className="flex items-center m-2 py-1 text-base">
+                            <BsHouses className="mr-2" /> All House & Owners
                         </NavLink>
                     </li>
 
