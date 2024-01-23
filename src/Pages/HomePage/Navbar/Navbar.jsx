@@ -21,8 +21,8 @@ const Navbar = () => {
                         placeholder="Search by house names"
                         className="input input-bordered w-full" />
 
-                    <button className="bg-[#4070F4] text-white py-3 px-10 ms-2 rounded-xl font-bold flex items-center">
-                        <FiSearch className="text-lg mr-1" />Search
+                    <button className="border-2 border-[#4070F4] text-[#4070F4] py-3 px-5 ms-2 rounded-xl font-bold flex items-center">
+                        <FiSearch className="text-xl mr-1" />
                     </button>
                 </form>
                 {/* input field section end  */}
@@ -46,7 +46,7 @@ const Navbar = () => {
                     {/* shorting btn end */}
 
                     <Link
-                        to={"/dashboard"}
+                        to={"/dashboard/overview"}
                         className="flex items-center text-sm font-semibold text-[#4070F4] border-2 border-[#4070F4] px-5 py-2 rounded-xl cursor-pointer hover:bg-[#4070F4] hover:text-white duration-300">
                         Go To You Dashboard <IoMdArrowRoundForward className="text-xl" />
                     </Link>

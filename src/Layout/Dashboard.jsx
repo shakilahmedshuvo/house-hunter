@@ -2,6 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { MdOutlineAddHomeWork } from "react-icons/md";
 import { BsHouses } from "react-icons/bs";
 import { BiHomeSmile } from "react-icons/bi";
+import { FaListCheck } from "react-icons/fa6";
 
 const Dashboard = () => {
     return (
@@ -11,7 +12,7 @@ const Dashboard = () => {
                 type="checkbox"
                 className="drawer-toggle" />
             <div
-                className="drawer-content flex flex-col items-center justify-center">
+                className="drawer-content flex flex-col items-center">
                 <Outlet />
                 <label
                     htmlFor="my-drawer-2"
@@ -46,6 +47,14 @@ const Dashboard = () => {
                             to='/dashboard/allHouse'
                             className="flex items-center m-2 py-1 text-base">
                             <BsHouses className="mr-2 text-xl" /> All House & Owners
+                        </NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink
+                            to='/dashboard/houseBooking'
+                            className="flex items-center m-2 py-1 text-base">
+                            <FaListCheck className="mr-2 text-xl" /> List of Renters
                         </NavLink>
                     </li>
 

@@ -14,6 +14,8 @@ import UpdateHouse from './Pages/Dashboard/UpdateHouse/UpdateHouse.jsx';
 import Home from './Pages/HomePage/Home/Home.jsx';
 import Dashboard from './Layout/Dashboard.jsx';
 import Login from './Pages/Login/Login.jsx';
+import DashboardOverview from './Pages/Dashboard/Dashbord/DashboardOverview.jsx';
+import HouseBooking from './Pages/Dashboard/HouseBooking/HouseBooking.jsx';
 
 const router = createBrowserRouter([
   {
@@ -44,12 +46,20 @@ const router = createBrowserRouter([
     element: <Dashboard />,
     children: [
       {
+        path: "/dashboard/overview",
+        element: <DashboardOverview />
+      },
+      {
         path: "/dashboard/addNewHouse",
         element: <AddNewHouse />
       },
       {
         path: "/dashboard/allHouse",
         element: <AllHouse />
+      },
+      {
+        path: "/dashboard/houseBooking",
+        element: <HouseBooking />
       }
     ]
   }

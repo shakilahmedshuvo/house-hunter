@@ -11,13 +11,13 @@ const ShowModal = () => {
     const onSubmit = (data) => {
         const name = data.name;
         const email = data.email;
-        const number = data.number;
+        const phone = data.phone;
 
         // get all the data 
         const allData = {
             name,
             email,
-            number
+            phone
         };
 
         // post data in mongodb
@@ -39,7 +39,7 @@ const ShowModal = () => {
                         timer: 1500
                     });
                     reset();
-                    navigation('/dashboard')
+                    navigation('/dashboard/houseBooking')
                 }
             })
         console.log(data);
@@ -118,7 +118,7 @@ const ShowModal = () => {
                             <input
                                 type="submit"
                                 value='I want to book this house!'
-                                className="w-full py-4 px-3 font-semibold border-2 bg-green-600 text-white rounded-lg  mt-3 cursor-pointer"
+                                className="w-full py-4 px-3 font-semibold border-2 bg-[#4070F4] text-white rounded-lg  mt-3 cursor-pointer"
                                 required />
                         </div>
                     </form>

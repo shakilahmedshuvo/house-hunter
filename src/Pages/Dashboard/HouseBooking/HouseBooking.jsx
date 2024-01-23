@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { RiDeleteBinLine } from "react-icons/ri";
-import { TbEdit } from "react-icons/tb";
 import Swal from "sweetalert2";
 
-const AllHouse = () => {
+const HouseBooking = () => {
     const [house, setHouse] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/allHouse")
+        fetch("http://localhost:5000/booking")
             .then(res => res.json())
             .then(data => {
                 setHouse(data);
@@ -16,11 +14,10 @@ const AllHouse = () => {
             })
     }, []);
 
-
-    // delete function
+    // handleDelete function
     const handleDelete = (id) => {
         Swal.fire({
-            title: 'Are you sure delete this house?',
+            title: 'Are you sure delete this house renter?',
             text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
@@ -30,7 +27,7 @@ const AllHouse = () => {
         })
             .then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/allHouse/${id}`, {
+                    fetch(`http://localhost:5000/bookingDelete/${id}`, {
                         method: 'DELETE',
                     })
                         .then(res => res.json())
@@ -51,7 +48,7 @@ const AllHouse = () => {
     };
 
     return (
-        <div className="overflow-x-auto w-full">
+        <div className="overflow-x-auto w-[90%]">
             <div>
                 <h2 className="text-center text-3xl mt-16 mb-4 text-[#4070F4]">
                     All House & Info
@@ -62,19 +59,9 @@ const AllHouse = () => {
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Name</th>
-                        <th>City</th>
-                        <th>Address</th>
-                        <th className="text-center w-fit">
-                            Bedrooms & Bathrooms
-                        </th>
-                        <th className="text-center w-fit">
-                            Room Size
-                        </th>
-                        <th>Price</th>
-                        <th className="text-[#00A6ED] text-sm">
-                            Update
-                        </th>
+                        <th>Renter Name</th>
+                        <th>Renter Email</th>
+                        <th>Renter Phone Number</th>
                         <th className="text-[#E91E63] text-sm">
                             Delete
                         </th>
@@ -85,45 +72,23 @@ const AllHouse = () => {
                     {
                         house?.map((item, index) => (
                             <tr
-                                key={item._id}>
+                                key={item?._id}>
 
                                 <th className="text-[11px]">
                                     {index + 1}
                                 </th>
 
                                 <td>
-                                    {item.name}
+                                    {item?.name}
                                 </td>
 
                                 <td>
-                                    {item.city}
+                                    {item?.email}
                                 </td>
 
                                 <td>
-                                    {item.address}
+                                    {item?.phone}
                                 </td>
-
-                                <td className="text-center w-fit">
-                                    {item.bathrooms} - {item.bedrooms}
-                                </td>
-
-                                <td className="text-center w-fit">
-                                    {item.roomSize}
-                                </td>
-
-                                <td>
-                                    {item.price}$
-                                </td>
-
-                                <Link
-                                    to={`/update/${item._id}`}>
-                                    <td
-                                        className="font-semibold cursor-pointer">
-                                        <p className="w-fit p-2 bg-[#00A6ED] text-white rounded-md">
-                                            <TbEdit className="text-2xl" />
-                                        </p>
-                                    </td>
-                                </Link>
 
                                 <td
                                     onClick={() => handleDelete(item._id)}
@@ -139,8 +104,8 @@ const AllHouse = () => {
                 </tbody>
                 {/* table body end */}
             </table>
-        </div>
+        </div >
     );
 };
 
-export default AllHouse;
+export default HouseBooking;
