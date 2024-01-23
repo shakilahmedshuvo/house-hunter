@@ -1,8 +1,9 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Register = () => {
+    const navigate = useNavigate();
     // get the data 
     const { register, handleSubmit, reset } = useForm();
 
@@ -23,7 +24,7 @@ const Register = () => {
         };
 
         // post data in mongodb
-        fetch('http://localhost:5000/userPost', {
+        fetch('https://house-hunter-server-production-10e7.up.railway.app/userPost', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,7 +42,7 @@ const Register = () => {
                         timer: 1500
                     });
                     reset();
-                    // Navigate('/dashboard')
+                    navigate('/dashboard/overview')
                 }
             })
         console.log(data);

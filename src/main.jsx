@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       {
         path: 'update/:id',
         element: <UpdateHouse />,
-        loader: ({ params }) => fetch(`http://localhost:5000/allHouse/${params.id}`)
+        loader: ({ params }) => fetch(`https://house-hunter-server-production-10e7.up.railway.app/allHouse/${params.id}`)
       },
     ]
   },

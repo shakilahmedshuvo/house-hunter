@@ -23,7 +23,7 @@ const UpdateHouse = () => {
         const roomSize = data.roomSize;
         const picture = data.picture;
         const date = data.date;
-        const price = data.price;
+        const price = parseFloat(data.price);
         const phone = data.phone;
         const description = data.description;
 
@@ -44,7 +44,7 @@ const UpdateHouse = () => {
         // console.log(allDataUpdate);
 
         // data post to the backend server( mongodb )
-        fetch(`http://localhost:5000/allHouse/${_id}`, {
+        fetch(`https://house-hunter-server-production-10e7.up.railway.app/allHouse/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

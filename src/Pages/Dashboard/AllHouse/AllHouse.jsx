@@ -8,7 +8,7 @@ const AllHouse = () => {
     const [house, setHouse] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/allHouse")
+        fetch("https://house-hunter-server-production-10e7.up.railway.app/allHouse")
             .then(res => res.json())
             .then(data => {
                 setHouse(data);
@@ -30,7 +30,7 @@ const AllHouse = () => {
         })
             .then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/allHouse/${id}`, {
+                    fetch(`https://house-hunter-server-production-10e7.up.railway.app/allHouse/${id}`, {
                         method: 'DELETE',
                     })
                         .then(res => res.json())
@@ -54,7 +54,7 @@ const AllHouse = () => {
         <div className="overflow-x-auto w-full">
             <div>
                 <h2 className="text-center text-3xl mt-16 mb-4 text-[#4070F4]">
-                    All House & Info
+                    All House Owners & Owners Info
                 </h2>
             </div>
             <table className="table">

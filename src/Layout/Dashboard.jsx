@@ -1,7 +1,7 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { MdOutlineAddHomeWork } from "react-icons/md";
 import { BsHouses } from "react-icons/bs";
-import { BiHomeSmile } from "react-icons/bi";
+import { IoArrowUndoOutline } from "react-icons/io5";
 import { FaListCheck } from "react-icons/fa6";
 
 const Dashboard = () => {
@@ -30,34 +30,35 @@ const Dashboard = () => {
                 </label>
                 <ul className="p-4 w-80 text-sm">
 
-                    <h2 className="text-2xl mt-4 mb-4">
+                    <Link
+                        to={"/dashboard/overview"}
+                        className="text-2xl mt-4 mb-5">
                         Dashboard
-                    </h2>
+                    </Link>
 
                     <li>
                         <NavLink
                             to='/dashboard/addNewHouse'
-                            className="flex items-center m-2 py-1 text-base">
-                            <MdOutlineAddHomeWork className="mr-2 text-xl" /> Add New House
+                            className="flex items-center m-2 py-1 text-base mt-3">
+                            <MdOutlineAddHomeWork className="mr-4 text-lg" /> Add New House
                         </NavLink>
                     </li>
 
                     <li>
                         <NavLink
                             to='/dashboard/allHouse'
-                            className="flex items-center m-2 py-1 text-base">
-                            <BsHouses className="mr-2 text-xl" /> All House & Owners
+                            className="flex items-center m-2 py-1 text-base mt-3">
+                            <BsHouses className="mr-4 text-lg" /> All House Owners
                         </NavLink>
                     </li>
 
                     <li>
                         <NavLink
                             to='/dashboard/houseBooking'
-                            className="flex items-center m-2 py-1 text-base">
-                            <FaListCheck className="mr-2 text-xl" /> List of Renters
+                            className="flex items-center m-2 py-1 text-base mt-3">
+                            <FaListCheck className="mr-4 text-lg" /> List Of All House Renters
                         </NavLink>
                     </li>
-
 
                     {/* divider start */}
                     <div
@@ -68,8 +69,8 @@ const Dashboard = () => {
                     <li>
                         <NavLink
                             to="/home"
-                            className="flex items-center m-2 py-1 text-base">
-                            <BiHomeSmile className="mr-2 text-2xl" />  Home
+                            className="flex items-center m-2 py-1 text-base mt-3">
+                            <IoArrowUndoOutline className="mr-1 text-xl" />  Go toHome
                         </NavLink>
                     </li>
                 </ul>

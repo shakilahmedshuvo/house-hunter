@@ -6,7 +6,7 @@ const HouseBooking = () => {
     const [house, setHouse] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/booking")
+        fetch("https://house-hunter-server-production-10e7.up.railway.app/booking")
             .then(res => res.json())
             .then(data => {
                 setHouse(data);
@@ -27,7 +27,7 @@ const HouseBooking = () => {
         })
             .then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/bookingDelete/${id}`, {
+                    fetch(`https://house-hunter-server-production-10e7.up.railway.app/bookingDelete/${id}`, {
                         method: 'DELETE',
                     })
                         .then(res => res.json())
@@ -51,7 +51,7 @@ const HouseBooking = () => {
         <div className="overflow-x-auto w-[90%]">
             <div>
                 <h2 className="text-center text-3xl mt-16 mb-4 text-[#4070F4]">
-                    All House & Info
+                    List Of All Renters & Renters Info
                 </h2>
             </div>
             <table className="table">
@@ -63,7 +63,7 @@ const HouseBooking = () => {
                         <th>Renter Email</th>
                         <th>Renter Phone Number</th>
                         <th className="text-[#E91E63] text-sm">
-                            Delete
+                            Delete Renter
                         </th>
                     </tr>
                 </thead>

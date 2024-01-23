@@ -14,7 +14,7 @@ const AddNewHouse = () => {
     const roomSize = data.roomSize;
     const picture = data.picture;
     const date = data.date;
-    const price = data.price;
+    const price = parseFloat(data.price);
     const phone = data.phone;
     const description = data.description;
 
@@ -34,7 +34,7 @@ const AddNewHouse = () => {
     };
 
     // post data in mongodb
-    fetch('http://localhost:5000/allHouse', {
+    fetch('https://house-hunter-server-production-10e7.up.railway.app/allHouse', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

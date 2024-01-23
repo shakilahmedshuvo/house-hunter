@@ -1,12 +1,14 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
     // get the data 
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit } = useForm();
+    const navigate = useNavigate();
 
     const onSubmit = (data) => {
         console.log(data);
+        navigate("/dashboard/overview");
     };
 
     return (

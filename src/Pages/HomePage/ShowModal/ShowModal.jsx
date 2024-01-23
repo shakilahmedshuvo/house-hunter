@@ -21,7 +21,7 @@ const ShowModal = () => {
         };
 
         // post data in mongodb
-        fetch('http://localhost:5000/bookingPost', {
+        fetch('https://house-hunter-server-production-10e7.up.railway.app/bookingPost', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
