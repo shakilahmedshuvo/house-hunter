@@ -1,20 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [acs, setAcs] = useState();
-
-    // get the data 
-    const [house, setHouse] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/allHouse')
-            .then(res => res.json())
-            .then(data => {
-                setHouse(data)
-            })
-    }, []);
 
     return (
         <div className="container mx-auto">

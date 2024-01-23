@@ -36,7 +36,7 @@ const Register = () => {
                     Swal.fire({
                         position: "top-center",
                         icon: "success",
-                        title: "Your Resister has been successful",
+                        title: "Your Resister has been Successful",
                         showConfirmButton: false,
                         timer: 1500
                     });
