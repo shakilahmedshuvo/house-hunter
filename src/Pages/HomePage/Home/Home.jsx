@@ -1,8 +1,11 @@
+import HouseCard from "../HouseCard/HouseCard";
+import Navbar from "../Navbar/Navbar";
 const Home = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <Navbar />
+            <HouseCard />
+        </>
     );
 };
 

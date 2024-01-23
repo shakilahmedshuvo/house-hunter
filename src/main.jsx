@@ -8,11 +8,12 @@ import {
 } from "react-router-dom";
 import Main from './Layout/Main.jsx';
 import Register from './Pages/Register/Register.jsx';
-import Login from './Pages/HomePage/Login/Login.jsx';
-import Dashboard from './Layout/dashboard.jsx';
 import AddNewHouse from './Pages/Dashboard/AddNewHouse/AddNewHouse.jsx';
 import AllHouse from './Pages/Dashboard/AllHouse/AllHouse.jsx';
 import UpdateHouse from './Pages/Dashboard/UpdateHouse/UpdateHouse.jsx';
+import Home from './Pages/HomePage/Home/Home.jsx';
+import Dashboard from './Layout/Dashboard.jsx';
+import Login from './Pages/Login/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />
+      },
+      {
+        path: "/home",
+        element: <Home />
       },
       {
         path: 'update/:id',

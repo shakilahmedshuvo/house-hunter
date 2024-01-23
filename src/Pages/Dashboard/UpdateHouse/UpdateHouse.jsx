@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateHouse = () => {
     const data = useLoaderData();
+    const navigate = useNavigate();
     // console.log(data);
     const { name, address, city, bedrooms, bathrooms, roomSize, picture, date, price, phone, description, _id } = data;
     // console.log(data);
@@ -61,6 +62,7 @@ const UpdateHouse = () => {
                         confirmButtonText: 'Updated'
                     })
                     reset();
+                    navigate('/dashboard/allHouse')
                 }
             })
     };

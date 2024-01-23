@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaHouseFlag } from "react-icons/fa6";
+import { MdOutlineAddHomeWork } from "react-icons/md";
 import { BsHouses } from "react-icons/bs";
+import { BiHomeSmile } from "react-icons/bi";
 
 const Dashboard = () => {
     return (
@@ -36,7 +37,7 @@ const Dashboard = () => {
                         <NavLink
                             to='/dashboard/addNewHouse'
                             className="flex items-center m-2 py-1 text-base">
-                            <FaHouseFlag className="mr-2" /> Add New House
+                            <MdOutlineAddHomeWork className="mr-2 text-xl" /> Add New House
                         </NavLink>
                     </li>
 
@@ -44,7 +45,7 @@ const Dashboard = () => {
                         <NavLink
                             to='/dashboard/allHouse'
                             className="flex items-center m-2 py-1 text-base">
-                            <BsHouses className="mr-2" /> All House & Owners
+                            <BsHouses className="mr-2 text-xl" /> All House & Owners
                         </NavLink>
                     </li>
 
@@ -57,8 +58,9 @@ const Dashboard = () => {
 
                     <li>
                         <NavLink
-                            to="/">
-                            Home
+                            to="/home"
+                            className="flex items-center m-2 py-1 text-base">
+                            <BiHomeSmile className="mr-2 text-2xl" />  Home
                         </NavLink>
                     </li>
                 </ul>
